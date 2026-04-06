@@ -84,7 +84,7 @@ This makes BeliefSync useful as:
 ## BeliefSync Architecture 🧩🛠️
 
 <div align="center">
-  <img src="./.github/assets/beliefsync-architecture.svg" alt="BeliefSync architecture" width="100%">
+  <img src="./.github/assets/beliefsync-architecture.png" alt="BeliefSync architecture" width="100%">
 </div>
 
 <p align="center">

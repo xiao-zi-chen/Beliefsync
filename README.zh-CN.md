@@ -55,7 +55,7 @@ BeliefSync 会做 4 件事：
 ## 架构 🧩🛠️
 
 <div align="center">
-  <img src="./.github/assets/beliefsync-architecture.svg" alt="BeliefSync 架构图" width="100%">
+  <img src="./.github/assets/beliefsync-architecture.png" alt="BeliefSync 架构图" width="100%">
 </div>
 
 BeliefSync 的运行链路很清楚：
