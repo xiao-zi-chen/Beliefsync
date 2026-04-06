@@ -18,12 +18,12 @@
 </p>
 
 <p align="center">
-  <strong>BeliefSync gives coding agents a repository-state sync layer:</strong>
+  <strong>🧠 BeliefSync gives coding agents a repository-state sync layer:</strong>
   explicit beliefs, stale-belief detection, targeted revalidation, git-aware scans, and reportable recovery state.
 </p>
 
 <p align="center">
-  <strong>Build with the project:</strong> make coding agents more inspectable, more stable in dynamic repositories, and less dependent on brute-force context rescans.
+  <strong>⚙️ Build with the project:</strong> make coding agents more inspectable, more stable in dynamic repositories, and less dependent on brute-force context rescans.
 </p>
 
 <p align="center">
@@ -49,17 +49,17 @@
 </p>
 
 <a id="why-beliefsync"></a>
-## Why BeliefSync
+## Why BeliefSync 🧠✨
 
 Coding agents are already good at producing patches in static snapshots.  
-They are much worse at one quieter but more realistic failure mode:
+They are much worse at one quieter but much more realistic failure mode 👀
 
-- a commit lands while the agent is still reasoning from an older snapshot
-- a test changes what “correct” means
-- an issue comment narrows the requirement
-- a dependency update invalidates an earlier hypothesis
+- 🔁 a commit lands while the agent is still reasoning from an older snapshot
+- 🧪 a test changes what “correct” means
+- 💬 an issue comment narrows the requirement
+- 📦 a dependency update invalidates an earlier hypothesis
 
-Most stacks answer that problem by rescanning more repository context.
+Most stacks answer that problem by rescanning more repository context 😵
 
 BeliefSync takes a different view:
 
@@ -67,62 +67,62 @@ BeliefSync takes a different view:
 
 So instead of hiding state inside prompt history, BeliefSync:
 
-- turns working assumptions into explicit repository-state beliefs
-- attaches evidence, scope, and version validity to each belief
-- detects which beliefs likely became stale after repository events
-- recommends low-cost revalidation actions before the agent keeps editing code
+- 🧩 turns working assumptions into explicit repository-state beliefs
+- 📎 attaches evidence, scope, and version validity to each belief
+- 🚨 detects which beliefs likely became stale after repository events
+- 🎯 recommends low-cost revalidation actions before the agent keeps editing code
 
 This makes BeliefSync useful as:
 
-- a reliability layer for coding agents
-- a debugging and observability tool for agent runs
-- a project-first foundation for stale-belief research in software engineering agents
+- 🛡️ a reliability layer for coding agents
+- 🔍 a debugging and observability tool for agent runs
+- 🧪 a project-first foundation for stale-belief research in software engineering agents
 
 ---
 
 <a id="beliefsync-architecture"></a>
-## BeliefSync Architecture
+## BeliefSync Architecture 🧩🛠️
 
 <div align="center">
   <img src="./.github/assets/beliefsync-architecture.svg" alt="BeliefSync architecture" width="100%">
 </div>
 
 <p align="center">
-  <strong>Repository events become explicit beliefs, stale assessments, and targeted recovery actions.</strong>
+  <strong>🔄 Repository events become explicit beliefs, stale assessments, and targeted recovery actions.</strong>
 </p>
 
-BeliefSync is built around one architectural bet:
+BeliefSync is built around one architectural bet 🧠
 
 > coding agents need an explicit repository-state layer, not just longer prompt history.
 
 The runtime core is intentionally simple and visible:
 
-- `Belief Constructor`
+- `Belief Constructor` 🧠
   - extracts candidate beliefs from issue text, test logs, and repository context
-- `Belief Store`
+- `Belief Store` 🗂️
   - persists repository-state claims with scope, evidence, and version metadata
-- `Stale Belief Detector`
+- `Stale Belief Detector` 🚨
   - scores which beliefs likely drifted after repository changes
-- `Revalidation Planner`
+- `Revalidation Planner` 🎯
   - converts stale beliefs into low-cost, high-value recovery actions
-- `Task Agent Adapter`
+- `Task Agent Adapter` 🤖
   - feeds the cleaned state back into a coding-agent loop
 
 The design is deliberately:
 
-- `agent-agnostic`
+- `agent-agnostic` 🔌
   - BeliefSync can sit beside different coding-agent runtimes
-- `inspectable`
+- `inspectable` 👀
   - beliefs are stored as explicit JSON, not hidden in opaque traces
-- `project-first, research-ready`
+- `project-first, research-ready` 🧪
   - useful as an open-source reliability tool while still structured enough for benchmark and paper work later
 
 ---
 
 <a id="quick-start"></a>
-## Quick Start
+## Quick Start 🚀
 
-### What You Need
+### What You Need 🧰
 
 | Item | Why It Matters |
 | --- | --- |
@@ -130,7 +130,7 @@ The design is deliberately:
 | `git` | used for repository-event ingestion and refresh workflows |
 | optional OpenAI-compatible provider | used for `llm-smoke-test` and `llm-extract` |
 
-### 1. Clone and Install
+### 1. Clone and Install 📦
 
 ```bash
 git clone https://github.com/xiao-zi-chen/Beliefsync.git
@@ -138,13 +138,13 @@ cd Beliefsync
 python -m pip install -e .
 ```
 
-### 2. Run the Built-In Demo
+### 2. Run the Built-In Demo ▶️
 
 ```bash
 python -m beliefsync demo
 ```
 
-### 3. Initialize a Workspace
+### 3. Initialize a Workspace 🏗️
 
 ```bash
 python -m beliefsync init --repo-id demo/repo
@@ -152,7 +152,7 @@ python -m beliefsync status
 python -m beliefsync show-config
 ```
 
-### 4. Create a Baseline Snapshot
+### 4. Create a Baseline Snapshot 📸
 
 ```bash
 python -m beliefsync snapshot ^
@@ -162,7 +162,7 @@ python -m beliefsync snapshot ^
   --test-log examples/demo_test_log.txt
 ```
 
-### 5. Scan Repository Changes
+### 5. Scan Repository Changes 🔍
 
 ```bash
 python -m beliefsync scan ^
@@ -174,7 +174,7 @@ python -m beliefsync scan ^
   --head-ref HEAD
 ```
 
-### 6. Refresh from the Last Snapshot
+### 6. Refresh from the Last Snapshot 🔄
 
 ```bash
 python -m beliefsync refresh ^
@@ -186,43 +186,43 @@ python -m beliefsync refresh ^
 ---
 
 <a id="workspace-workflow"></a>
-## Workspace Workflow
+## Workspace Workflow 🗺️🔁
 
-BeliefSync is not just a one-shot CLI. It now supports a small but real workspace lifecycle.
+BeliefSync is not just a one-shot CLI. It now supports a small but real workspace lifecycle ✨
 
 ### Baseline Loop
 
-1. `beliefsync init`
+1. `beliefsync init` 🏗️
    - create `.beliefsync/`
-2. `beliefsync snapshot`
+2. `beliefsync snapshot` 📸
    - store the current belief baseline
-3. repository changes happen
-4. `beliefsync refresh`
+3. repository changes happen 🔁
+4. `beliefsync refresh` 🚨
    - compare the last belief baseline against new repository events
 5. BeliefSync emits:
    - stale-belief assessments
    - targeted revalidation actions
    - text / JSON / Markdown / HTML reports
-6. the refreshed beliefs become the next baseline
+6. the refreshed beliefs become the next baseline ♻️
 
 ### Why This Matters
 
 That workflow makes BeliefSync feel like a practical tool rather than a one-off demo:
 
-- you can keep a local belief baseline in `.beliefsync/beliefs.json`
-- you can inspect workspace state via `.beliefsync/state.json`
-- you can keep report history under `.beliefsync/reports/`
+- 🧠 you can keep a local belief baseline in `.beliefsync/beliefs.json`
+- 🧾 you can inspect workspace state via `.beliefsync/state.json`
+- 📚 you can keep report history under `.beliefsync/reports/`
 
-This is the shape of a real “agent reliability sidecar,” not just a benchmark script.
+This is the shape of a real “agent reliability sidecar,” not just a benchmark script 💡
 
 ---
 
 <a id="kimi-openai-compatible"></a>
-## Kimi / OpenAI-Compatible Support
+## Kimi / OpenAI-Compatible Support 🌙🤝
 
-BeliefSync already supports OpenAI-compatible LLM access, including Kimi-compatible usage.
+BeliefSync already supports OpenAI-compatible LLM access, including Kimi-compatible usage ✅
 
-### Supported Env Vars
+### Supported Env Vars 🔑
 
 Generic:
 
@@ -239,7 +239,7 @@ Kimi aliases:
 
 You can start from [`.env.example`](./.env.example).
 
-### Smoke Test the Connection
+### Smoke Test the Connection 🧪
 
 ```bash
 python -m beliefsync llm-smoke-test
@@ -247,12 +247,12 @@ python -m beliefsync llm-smoke-test
 
 This command:
 
-- lists available models from the provider
-- performs a tiny completion request
-- retries on transient overload
-- falls back to reasonable OpenAI-compatible model choices when possible
+- 📋 lists available models from the provider
+- ⚡ performs a tiny completion request
+- 🔁 retries on transient overload
+- 🧭 falls back to reasonable OpenAI-compatible model choices when possible
 
-### Use an LLM to Extract Beliefs
+### Use an LLM to Extract Beliefs 🧠
 
 ```bash
 python -m beliefsync llm-extract ^
@@ -267,7 +267,7 @@ This is useful when you want richer candidate beliefs than the purely heuristic 
 ---
 
 <a id="commands-surface"></a>
-## Commands Surface
+## Commands Surface 🎛️
 
 BeliefSync currently exposes **16 CLI commands**:
 
@@ -292,14 +292,14 @@ BeliefSync currently exposes **16 CLI commands**:
 
 This is enough to make the repository immediately useful for:
 
-- local developer experiments
-- coding-agent wrappers
-- report-first debugging workflows
-- future adapter work with OpenHands or SWE-agent
+- 🧪 local developer experiments
+- 🤖 coding-agent wrappers
+- 🧾 report-first debugging workflows
+- 🔌 future adapter work with OpenHands or SWE-agent
 
 ---
 
-## Project Surface
+## Project Surface 📡
 
 BeliefSync is compact on purpose, but it already has a meaningful open-source surface:
 
@@ -314,13 +314,13 @@ BeliefSync is compact on purpose, but it already has a meaningful open-source su
 
 That combination is a big part of the project’s identity:
 
-- serious enough to be useful
-- simple enough to inspect
-- structured enough to extend
+- 🧱 serious enough to be useful
+- 👀 simple enough to inspect
+- 🌱 structured enough to extend
 
 ---
 
-## Project Layout
+## Project Layout 🗂️
 
 ```text
 Beliefsync/
@@ -347,17 +347,17 @@ Important paths:
 
 ---
 
-## Roadmap Direction
+## Roadmap Direction 🛣️
 
 The next steps are not “make the README prettier again.”  
 They are product and integration steps:
 
-- richer symbol-level scope extraction
-- better git-native event parsing
-- learned stale-belief detectors
-- OpenHands and SWE-agent integration
-- watch / hook driven workflows
-- richer dashboards for belief drift and recovery actions
+- 🧬 richer symbol-level scope extraction
+- 🪝 better git-native event parsing
+- 🧠 learned stale-belief detectors
+- 🤝 OpenHands and SWE-agent integration
+- ⏱️ watch / hook driven workflows
+- 📊 richer dashboards for belief drift and recovery actions
 
 BeliefSync should grow into:
 
@@ -365,20 +365,20 @@ BeliefSync should grow into:
 
 ---
 
-## Contributing
+## Contributing 🌱
 
 If you want to help, the most valuable contributions right now are:
 
-- real repository traces
-- stale-belief failure cases
-- better event parsers
-- stronger report UX
-- coding-agent integrations
+- 🧾 real repository traces
+- 🚨 stale-belief failure cases
+- 🧩 better event parsers
+- 🎨 stronger report UX
+- 🔌 coding-agent integrations
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md), [SECURITY.md](./SECURITY.md), and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
 
 ---
 
-## License
+## License 📄
 
 MIT. See [LICENSE](./LICENSE).

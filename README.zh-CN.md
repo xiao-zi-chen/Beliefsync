@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <strong>BeliefSync 是一个给 coding agent 用的仓库状态同步层：</strong>
+  <strong>🧠 BeliefSync 是一个给 coding agent 用的仓库状态同步层：</strong>
   把隐式假设变成显式 beliefs，检测哪些 beliefs 过期，并给出定向恢复动作。
 </p>
 
@@ -30,7 +30,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/许可证-MIT-FACC15?style=for-the-badge" alt="License"></a>
 </p>
 
-## 这个项目是做什么的
+## 这个项目是做什么的 🧠✨
 
 BeliefSync 的核心目标不是“让 agent 读更多上下文”，而是：
 
@@ -38,21 +38,21 @@ BeliefSync 的核心目标不是“让 agent 读更多上下文”，而是：
 
 它主要解决的场景包括：
 
-- agent 还在按旧 commit 的理解继续改代码
-- test 已经变化，但 agent 还沿用旧测试语义
-- issue/comment 加了新约束，但 agent 还没同步
-- dependency 更新后，旧推理链已经不成立
+- 🔁 agent 还在按旧 commit 的理解继续改代码
+- 🧪 test 已经变化，但 agent 还沿用旧测试语义
+- 💬 issue/comment 加了新约束，但 agent 还没同步
+- 📦 dependency 更新后，旧推理链已经不成立
 
 BeliefSync 会做 4 件事：
 
-1. 提取 repository-state beliefs
-2. 给 belief 绑定 scope、evidence、version validity
-3. 检测哪些 belief stale 了
-4. 推荐最值得执行的 targeted revalidation 动作
+1. 🧩 提取 repository-state beliefs
+2. 📎 给 belief 绑定 scope、evidence、version validity
+3. 🚨 检测哪些 belief stale 了
+4. 🎯 推荐最值得执行的 targeted revalidation 动作
 
 ---
 
-## 架构
+## 架构 🧩🛠️
 
 <div align="center">
   <img src="./.github/assets/beliefsync-architecture.svg" alt="BeliefSync 架构图" width="100%">
@@ -60,20 +60,20 @@ BeliefSync 会做 4 件事：
 
 BeliefSync 的运行链路很清楚：
 
-- `Repository Events`
+- `Repository Events` 🔄
   - git diff、test 变化、issue / comment 更新
-- `Belief Store`
+- `Belief Store` 🗂️
   - 存储 agent 当前对仓库状态的结构化判断
-- `Stale Detector`
+- `Stale Detector` 🚨
   - 判断哪些 belief 可能失效
-- `Targeted Revalidation`
+- `Targeted Revalidation` 🎯
   - 生成更低成本的恢复动作
-- `Task Agent`
+- `Task Agent` 🤖
   - 把清理过的状态再喂回 coding workflow
 
 ---
 
-## 快速开始
+## 快速开始 🚀
 
 ```bash
 git clone https://github.com/xiao-zi-chen/Beliefsync.git
@@ -92,26 +92,26 @@ python -m beliefsync refresh --repo-path . --head-ref HEAD --format markdown
 
 ---
 
-## Workspace 工作流
+## Workspace 工作流 🗺️🔁
 
-BeliefSync 现在已经不是一次性 demo 脚本，而是有持续工作流的工具：
+BeliefSync 现在已经不是一次性 demo 脚本，而是有持续工作流的工具 ✨
 
-1. `init`
+1. `init` 🏗️
    - 初始化 `.beliefsync/`
-2. `snapshot`
+2. `snapshot` 📸
    - 记录当前 belief baseline
-3. 仓库变化
-4. `refresh`
+3. 仓库变化 🔁
+4. `refresh` 🚨
    - 基于新的 repository events 做 stale-belief 分析
 5. 输出：
    - text / json / markdown / html 报告
-6. 更新 baseline，供下一轮继续用
+6. 更新 baseline，供下一轮继续用 ♻️
 
 ---
 
-## Kimi / OpenAI-Compatible 支持
+## Kimi / OpenAI-Compatible 支持 🌙🤝
 
-BeliefSync 已经支持 OpenAI-compatible 接口，也已经支持 Kimi 兼容接入。
+BeliefSync 已经支持 OpenAI-compatible 接口，也已经支持 Kimi 兼容接入 ✅
 
 环境变量支持：
 
@@ -135,7 +135,7 @@ python -m beliefsync llm-extract --repo-id demo/repo --issue-file examples/demo_
 
 ---
 
-## 当前项目面
+## 当前项目面 📡
 
 目前仓库已经有：
 
@@ -146,11 +146,11 @@ python -m beliefsync llm-extract --repo-id demo/repo --issue-file examples/demo_
 - `13` 个测试
 - `0` 个运行时第三方依赖
 
-所以它现在已经不是一个空壳 repo，而是一版可以真实演示和继续扩展的开源项目。
+所以它现在已经不是一个空壳 repo，而是一版可以真实演示和继续扩展的开源项目 ✨
 
 ---
 
-## 文档入口
+## 文档入口 📚
 
 - [README.md](./README.md)
 - [docs/architecture.md](./docs/architecture.md)
@@ -161,6 +161,6 @@ python -m beliefsync llm-extract --repo-id demo/repo --issue-file examples/demo_
 
 ---
 
-## 许可证
+## 许可证 📄
 
 MIT，见 [LICENSE](./LICENSE)。
