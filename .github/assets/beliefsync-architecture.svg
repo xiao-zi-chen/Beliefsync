@@ -1,0 +1,41 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="720" rx="36" fill="#0B1220"/>
+  <text x="70" y="92" fill="#E2E8F0" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="800">BeliefSync Runtime Flow</text>
+  <text x="70" y="132" fill="#94A3B8" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="500">Dynamic repositories become inspectable agent state through explicit beliefs.</text>
+
+  <rect x="72" y="190" width="260" height="180" rx="28" fill="#132238" stroke="#22D3EE" stroke-width="3"/>
+  <text x="102" y="246" fill="#E2E8F0" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700">Repository Events</text>
+  <text x="102" y="292" fill="#93C5FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">• git diffs</text>
+  <text x="102" y="326" fill="#93C5FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">• changed tests</text>
+  <text x="102" y="360" fill="#93C5FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">• issue / comment drift</text>
+
+  <rect x="382" y="150" width="320" height="260" rx="28" fill="#16263D" stroke="#60A5FA" stroke-width="3"/>
+  <text x="418" y="208" fill="#E2E8F0" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="800">Belief Store</text>
+  <text x="418" y="258" fill="#BFDBFE" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">Structured repository-state beliefs:</text>
+  <text x="418" y="300" fill="#BFDBFE" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• bug localization</text>
+  <text x="418" y="334" fill="#BFDBFE" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• API contracts</text>
+  <text x="418" y="368" fill="#BFDBFE" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• test expectations</text>
+
+  <rect x="764" y="150" width="332" height="260" rx="28" fill="#18293F" stroke="#38BDF8" stroke-width="3"/>
+  <text x="802" y="208" fill="#E2E8F0" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="800">Stale Detector</text>
+  <text x="802" y="258" fill="#BAE6FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">Which beliefs no longer hold?</text>
+  <text x="802" y="302" fill="#BAE6FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• invalidation by scope</text>
+  <text x="802" y="336" fill="#BAE6FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• reason-aware scoring</text>
+  <text x="802" y="370" fill="#BAE6FD" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• belief drift visibility</text>
+
+  <rect x="1158" y="150" width="366" height="260" rx="28" fill="#231F38" stroke="#F97316" stroke-width="3"/>
+  <text x="1194" y="208" fill="#F8FAFC" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="800">Targeted Revalidation</text>
+  <text x="1194" y="258" fill="#FED7AA" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">Recover without brute-force rescans:</text>
+  <text x="1194" y="302" fill="#FED7AA" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• read file</text>
+  <text x="1194" y="336" fill="#FED7AA" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• rerun test</text>
+  <text x="1194" y="370" fill="#FED7AA" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="23">• inspect symbol / comment</text>
+
+  <rect x="472" y="492" width="666" height="142" rx="28" fill="#111827" stroke="#64748B" stroke-width="3"/>
+  <text x="518" y="548" fill="#E5E7EB" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="800">Coding Agent Runtime</text>
+  <text x="518" y="592" fill="#CBD5E1" font-family="Segoe UI, DejaVu Sans, Arial, sans-serif" font-size="24">BeliefSync feeds a cleaner, inspectable state back into patching, testing, and planning.</text>
+
+  <path d="M332 280H382" stroke="#22D3EE" stroke-width="8" stroke-linecap="round"/>
+  <path d="M702 280H764" stroke="#60A5FA" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1096 280H1158" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M930 410V492" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -26,9 +26,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/beliefsync"
-Repository = "https://github.com/your-org/beliefsync"
-Issues = "https://github.com/your-org/beliefsync/issues"
+Homepage = "https://github.com/xiao-zi-chen/Beliefsync"
+Repository = "https://github.com/xiao-zi-chen/Beliefsync"
+Issues = "https://github.com/xiao-zi-chen/Beliefsync/issues"
 
 [project.scripts]
 beliefsync = "beliefsync.cli:main"
