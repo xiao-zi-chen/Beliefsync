@@ -1,0 +1,10 @@
+FAILED tests/test_retry.py::test_retry_resets_state
+
+E AssertionError: expected retry_count == 0 before retry cycle
+E assert 3 == 0
+
+Traceback:
+  File "tests/test_retry.py", line 28, in test_retry_resets_state
+    assert manager.retry_count == 0
+  File "src/retry_manager.py", line 73, in begin_retry_cycle
+    self.retry_count += previous_attempts

@@ -1,0 +1,21 @@
+{
+  "repo_id": "demo/repo",
+  "branch": "main",
+  "stale_threshold": 0.5,
+  "max_actions": 5,
+  "track_dependency_files": true,
+  "dependency_file_patterns": [
+    "requirements.txt",
+    "poetry.lock",
+    "package.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "Cargo.lock",
+    "go.mod",
+    "pom.xml"
+  ],
+  "test_path_markers": [
+    "tests/",
+    "test_"
+  ]
+}

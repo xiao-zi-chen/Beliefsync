@@ -1,0 +1,26 @@
+[
+  {
+    "event_id": "evt-1",
+    "event_type": "code_diff",
+    "summary": "Modified retry manager state handling",
+    "paths": ["src/retry_manager.py"],
+    "symbols": ["RetryManager", "begin_retry_cycle"],
+    "commit_hash": "abc1234"
+  },
+  {
+    "event_id": "evt-2",
+    "event_type": "issue_updated",
+    "summary": "Issue comment clarifies state must be reset before every retry cycle",
+    "paths": [],
+    "symbols": ["RetryManager"],
+    "commit_hash": "abc1234"
+  },
+  {
+    "event_id": "evt-3",
+    "event_type": "test_changed",
+    "summary": "Retry reset test now validates retry_count and backoff_window",
+    "paths": ["tests/test_retry.py"],
+    "symbols": ["test_retry_resets_state"],
+    "commit_hash": "abc1234"
+  }
+]
